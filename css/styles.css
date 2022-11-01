@@ -656,11 +656,17 @@ button {
     height: 100%;
 
     background-color: rgba(0, 0, 0, 0.2);
+
+    transition-property: opacity, scale;
+    transition-duration: var(--duration);
+    transition-timing-function: var(--timing-fn);
 }
 
 .backdrop.is-hidden {
+    visibility: hidden;
     opacity: 0;
     pointer-events: none;
+    scale: 0;
 }
 
 .modal {
@@ -672,9 +678,11 @@ button {
     min-width: 528px;
     min-height: 581px;
 
-    background-color: #FFFFFF;
+    background-color: var(--font-color);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
+
+
 }
 .close-button {
     position: absolute;
