@@ -392,30 +392,31 @@ button {
 
 .examples-thumb {
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .examples-overlay {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 370px;
-    height: 70px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background-color: var(--exampl-bg);
+    
 }
 
 .examples-content {
     font-weight: 700;
     line-height: 1.14;
-    text-align: center;
     text-transform: uppercase;
     
     color: var(--font-color);
+    
+
+    position: absolute;
+    bottom: 0;
+    width: 370px;
+    height: 70px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: var(--exampl-bg);
 }
 
 /*  T E A M   section */
@@ -657,7 +658,10 @@ button {
 
     background-color: rgba(0, 0, 0, 0.2);
 
-    transition-property: opacity, scale;
+    opacity: 1;
+    visibility: visible;
+
+    transition-property: opacity, visibility;
     transition-duration: var(--duration);
     transition-timing-function: var(--timing-fn);
 }
@@ -666,7 +670,8 @@ button {
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
-    scale: 0;
+
+    /* scale: 0; */
 }
 
 .modal {
@@ -707,7 +712,7 @@ button {
 .close-button:hover,
 .close-button:focus {
     color: var(--acent-color);
-    border: 1px solid currentColor;
+    /* border: 1px solid currentColor; */
 }
 .close-icon {
    fill: currentColor;    
@@ -851,7 +856,7 @@ button {
     background: var(--overlay-bg-color);
     
     transform: translateY(100%);
-    transition: transform 250ms ease;    
+    transition: transform var(--duration) var(--timing-fn);    
 }
 
 .overlay-content {
